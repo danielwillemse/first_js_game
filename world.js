@@ -1,13 +1,6 @@
 var loadGame = function() {
-  var canvas = document.createElement("canvas");
-  var ctx = canvas.getContext("2d");
-  canvas.width = 600;
-  canvas.height = 600;
-  var world = document.getElementById('world');
-  world.appendChild(canvas);
-
   return {
-    ctx: ctx,
+    ctx: loadCanvas(),
     world: getWorld(),
     level: getLevel(),
     hero: getHero()
@@ -52,4 +45,14 @@ var getLevel = function() {
       {x: 255, y: 195, type: 'wall'},
     ]
   }
+}
+
+var loadCanvas = function() {
+  var canvas = document.createElement("canvas");
+  var ctx = canvas.getContext("2d");
+  canvas.width = 600;
+  canvas.height = 600;
+  var world = document.getElementById('world');
+  world.appendChild(canvas);
+  return ctx;
 }
