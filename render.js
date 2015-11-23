@@ -6,9 +6,10 @@ var render = function() {
 
 var renderWorld = function() {
   var ctx = window.game.ctx;
+  var world = window.game.world;
 
   ctx.fillStyle = "#ffffff";
-  ctx.fillRect(0,0,600,600);
+  ctx.fillRect(0,0,world.width,world.height);
 }
 
 var renderLevel = function() {
