@@ -1,27 +1,25 @@
 window.onload = function() {
-  window.game = loadGame();
-  var then = Date.now();
-  main(then);
+  window.Game = loadGame();
+  addKeyListeners();
+  main();
 }
 
-var main = function (then) {
-  var now = Date.now();
-  var delta = now - then;
-
+var main = function () {
   update();
   render();
-
-  then = now;
 
   requestAnimationFrame(main);
 };
 
-var keysDown = {};
+addKeyListeners = function() {
+  Game.keysDown = {};
 
-addEventListener("keydown", function (e) {
-  keysDown[e.keyCode] = true;
-}, false);
+  addEventListener("keydown", function (e) {
+    Game.keysDown[e.keyCode] = true;
+  }, false);
 
-addEventListener("keyup", function (e) {
-  delete keysDown[e.keyCode];
-}, false);
+  addEventListener("keyup", function (e) {
+    delete Game.keysDown[e.keyCode];
+  }, false);
+}
+

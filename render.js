@@ -5,28 +5,19 @@ var render = function() {
 }
 
 var renderWorld = function() {
-  var ctx = window.game.ctx;
-  var world = window.game.world;
-
-  ctx.fillStyle = "#ffffff";
-  ctx.fillRect(0,0,world.width,world.height);
+  Game.ctx.fillStyle = "#ffffff";
+  Game.ctx.fillRect(0,0,Game.world.width,Game.world.height);
 }
 
 var renderLevel = function() {
-  var ctx = window.game.ctx;
-  var level = window.game.level;
-
-  for (index in level.grid) {
-    var node = level.grid[index];
-    ctx.fillStyle = "#ff6600";
-    ctx.fillRect(node.x,node.y,15,15);
+  for (index in Game.level.grid) {
+    var node = Game.level.grid[index];
+    Game.ctx.fillStyle = "#ff6600";
+    Game.ctx.fillRect(node.x,node.y,15,15);
   }
 }
 
 var renderHero = function() {
-  var ctx = window.game.ctx;
-  var hero = window.game.hero;
-
-  ctx.fillStyle = "#000000";
-  ctx.fillRect(hero.x,hero.y,15,15);
+  Game.ctx.fillStyle = "#000000";
+  Game.ctx.fillRect(Game.hero.x,Game.hero.y,15,15);
 }

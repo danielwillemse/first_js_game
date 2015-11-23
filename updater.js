@@ -4,20 +4,20 @@ var update = function () {
 
 var updateHero = function() {
   var modifier = 15;
-  var hero = window.game.hero;
+  var hero = Game.hero;
   var x_mod = 0;
   var y_mod = 0;
 
-  if (38 in keysDown) { // Up
+  if (38 in Game.keysDown) { // Up
     y_mod = modifier * -1;
   }
-  if (40 in keysDown) { // Down
+  if (40 in Game.keysDown) { // Down
     y_mod = modifier;
   }
-  if (37 in keysDown) { // Left
+  if (37 in Game.keysDown) { // Left
     x_mod = modifier * -1;
   }
-  if (39 in keysDown) { // Right
+  if (39 in Game.keysDown) { // Right
     x_mod = modifier;
   }
 
@@ -32,15 +32,17 @@ var updateHero = function() {
 }
 
 var validHeroMove = function(new_x, new_y) {
+  var world = Game.world;
+
   return (
-    (new_x >= 0 && new_x <= (600 - 15)) &&
-    (new_y >= 0 && new_y <= (600 - 15)) &&
+    (new_x >= 0 && new_x <= (world.width - world.node_width)) &&
+    (new_y >= 0 && new_y <= (world.height - world.node_height)) &&
     notWallCollision(new_x, new_y)
   );
 }
 
 var notWallCollision = function(new_x, new_y) {
-  var level = window.game.level;
+  var level = Game.level;
 
   for (index in level.grid) {
     var node = level.grid[index];
