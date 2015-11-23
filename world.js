@@ -8,8 +8,9 @@ var loadGame = function() {
 
   return {
     ctx: ctx,
-    hero: getHero(),
-    level: getLevel()
+    world: getWorld(),
+    level: getLevel(),
+    hero: getHero()
   }
 }
 
@@ -17,6 +18,15 @@ var getHero = function() {
   return {
     x: 0,
     y: 0
+  }
+}
+
+var getWorld = function() {
+  return {
+    width: 600,
+    height: 600,
+    node_width: 15,
+    node_height: 15
   }
 }
 
