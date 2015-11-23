@@ -21,8 +21,11 @@ var updateHero = function() {
     x_mod = modifier;
   }
 
-  if (validHeroMove(hero.x + x_mod, hero.y + y_mod)) {
+  if (validHeroMove(hero.x + x_mod, hero.y)) {
     hero.x += x_mod;
+  }
+
+  if (validHeroMove(hero.x, hero.y + y_mod)) {
     hero.y += y_mod;
   }
 
