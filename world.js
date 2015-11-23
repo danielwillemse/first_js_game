@@ -33,6 +33,13 @@ var getLevel = function() {
       {x: 150, y: 165, type: 'wall'},
       {x: 150, y: 180, type: 'wall'},
       {x: 150, y: 195, type: 'wall'},
+      {x: 165, y: 195, type: 'secret'},
+      {x: 180, y: 195, type: 'wall'},
+      {x: 195, y: 195, type: 'wall'},
+      {x: 210, y: 195, type: 'wall'},
+      {x: 225, y: 195, type: 'wall'},
+      {x: 240, y: 195, type: 'wall'},
+      {x: 255, y: 195, type: 'wall'},
     ]
   }
 }
