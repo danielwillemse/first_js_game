@@ -5,7 +5,7 @@ var render = function() {
 }
 
 var renderWorld = function() {
-  Game.ctx.fillStyle = "#eeee00";
+  Game.ctx.fillStyle = "#ffff99";
   Game.ctx.fillRect(0,0,Game.world.width,Game.world.height);
 }
 
@@ -35,10 +35,17 @@ var renderHero = function() {
     'up' : 60,
     'right' : 90
   }[Game.hero.direction] || 0;
+  var y_offset = 0;
+
+  if (34 in Game.keysDown && hero.equipped == 'sword' ) { // Spacebar
+    console.log('spacebar!!');
+    y_offset = 85;
+    x_offset -= 5;
+  }
 
   Game.ctx.drawImage(
     heroImage,
-    x_offset, 0, 20, 20,
+    x_offset, y_offset, 20, 20,
     Game.hero.x,
     Game.hero.y,
     20, 20
