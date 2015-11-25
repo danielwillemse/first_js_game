@@ -12,7 +12,13 @@ var renderWorld = function() {
 var renderLevel = function() {
   for (index in Game.level.grid) {
     var node = Game.level.grid[index];
-    Game.ctx.fillStyle = "#333333";
+    var fillStyle = {
+      'wall' : '#333333',
+      'grass' : '#33ff33',
+      'water' : '#3333ff'
+    }[node.fill] || '#000000';
+
+    Game.ctx.fillStyle = fillStyle;
     Game.ctx.fillRect(node.x,node.y,Game.world.node_width,Game.world.node_height);
   }
 }

@@ -51,7 +51,7 @@ var WallCollision = function(new_x, new_y) {
   for (index in level.grid) {
     var node = level.grid[index];
 
-    if (node.type == 'wall' && new_x == node.x && new_y == node.y) {
+    if (node.type == 'blocked' && new_x == node.x && new_y == node.y) {
       return true;
     }
   }
