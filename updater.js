@@ -41,20 +41,20 @@ var validHeroMove = function(new_x, new_y) {
   return (
     (new_x >= 0 && new_x <= (world.width - world.node_width)) &&
     (new_y >= 0 && new_y <= (world.height - world.node_height)) &&
-    notWallCollision(new_x, new_y)
+    !WallCollision(new_x, new_y)
   );
 }
 
-var notWallCollision = function(new_x, new_y) {
+var WallCollision = function(new_x, new_y) {
   var level = Game.level;
 
   for (index in level.grid) {
     var node = level.grid[index];
 
     if (node.type == 'wall' && new_x == node.x && new_y == node.y) {
-      return false;
+      return true;
     }
   }
 
-  return true;
+  return false;
 }
