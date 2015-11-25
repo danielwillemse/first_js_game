@@ -5,19 +5,36 @@ var render = function() {
 }
 
 var renderWorld = function() {
-  Game.ctx.fillStyle = "#ffffff";
+  Game.ctx.fillStyle = "#eeee00";
   Game.ctx.fillRect(0,0,Game.world.width,Game.world.height);
 }
 
 var renderLevel = function() {
   for (index in Game.level.grid) {
     var node = Game.level.grid[index];
-    Game.ctx.fillStyle = "#ff6600";
+    Game.ctx.fillStyle = "#333333";
     Game.ctx.fillRect(node.x,node.y,Game.world.node_width,Game.world.node_height);
   }
 }
 
+var heroImage = new Image();
+heroImage.src = "assets/zelda-sprites-link.png";
+
 var renderHero = function() {
-  Game.ctx.fillStyle = "#000000";
-  Game.ctx.fillRect(Game.hero.x,Game.hero.y,Game.world.node_width,Game.world.node_width);
+  //drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
+
+  var x_offset = {
+    'down' : 0,
+    'left' : 30,
+    'up' : 60,
+    'right' : 90
+  }[Game.hero.direction] || 0;
+
+  Game.ctx.drawImage(
+    heroImage,
+    x_offset, 0, 20, 20,
+    Game.hero.x,
+    Game.hero.y,
+    20, 20
+  );
 }
