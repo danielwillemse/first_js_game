@@ -1,10 +1,12 @@
 var loadGame = function() {
-  return {
-    ctx: loadCanvas(),
-    world: getWorld(),
-    level: getLevel(),
-    hero: getHero()
-  }
+  Game = {};
+  Game.ctx = loadCanvas();
+  Game.world = getWorld();
+  Game.level = getLevel();
+  Game.hero = getHero();
+
+  window.Game = Game
+  return Game;
 }
 
 var getHero = function() {
