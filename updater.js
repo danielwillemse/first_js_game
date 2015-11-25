@@ -3,7 +3,7 @@ var update = function () {
 }
 
 var updateHero = function() {
-  var modifier = 15;
+  var modifier = Game.world.node_width;
   var hero = Game.hero;
   var x_mod = 0;
   var y_mod = 0;
