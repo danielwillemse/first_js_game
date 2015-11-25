@@ -14,16 +14,17 @@ var getHero = function() {
     x: 0,
     y: 0,
     direction: 'down',
-    equipped: 'sword'
+    equipped: 'sword',
+    sword: 'inactive'
   }
 }
 
 var getWorld = function() {
   return {
-    width: 600,
-    height: 600,
-    node_width: 15,
-    node_height: 15
+    width: 800,
+    height: 800,
+    node_width: 20,
+    node_height: 20
   }
 }
 
@@ -73,8 +74,8 @@ var getLevel = function() {
 var loadCanvas = function() {
   var canvas = document.createElement("canvas");
   var ctx = canvas.getContext("2d");
-  canvas.width = 600;
-  canvas.height = 600;
+  canvas.width = 800;
+  canvas.height = 800;
   var world = document.getElementById('world');
   world.appendChild(canvas);
   return ctx;
