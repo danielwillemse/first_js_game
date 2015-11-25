@@ -10,15 +10,19 @@ var updateHero = function() {
 
   if (38 in Game.keysDown) { // Up
     y_mod = modifier * -1;
+    hero.direction = 'up';
   }
   if (40 in Game.keysDown) { // Down
     y_mod = modifier;
+    hero.direction = 'down';
   }
   if (37 in Game.keysDown) { // Left
     x_mod = modifier * -1;
+    hero.direction = 'left';
   }
   if (39 in Game.keysDown) { // Right
     x_mod = modifier;
+    hero.direction = 'right';
   }
 
   if (validHeroMove(hero.x + x_mod, hero.y)) {

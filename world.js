@@ -10,7 +10,9 @@ var loadGame = function() {
 var getHero = function() {
   return {
     x: 0,
-    y: 0
+    y: 0,
+    direction: 'down',
+    equipped: 'sword'
   }
 }
 
