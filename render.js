@@ -37,7 +37,7 @@ var renderHero = function() {
   }[Game.hero.direction] || 0;
   var y_offset = 0;
 
-  if (34 in Game.keysDown && hero.equipped == 'sword' ) { // Spacebar
+  if (32 in Game.keysDown && Game.hero.equipped == 'sword' ) { // Spacebar
     console.log('spacebar!!');
     y_offset = 85;
     x_offset -= 5;
