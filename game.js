@@ -8,7 +8,9 @@ var main = function () {
   update();
   render();
 
-  requestAnimationFrame(main);
+  setTimeout(function() {
+    requestAnimationFrame(main);
+  }, 20);
 };
 
 addKeyListeners = function() {
