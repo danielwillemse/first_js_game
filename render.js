@@ -24,7 +24,7 @@ var renderLevel = function() {
 }
 
 var heroImage = new Image();
-heroImage.src = "assets/zelda-sprites-link.png";
+heroImage.src = "assets/zelda-sprites-link-new.png";
 
 var renderHero = function() {
   //drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
