@@ -48,8 +48,12 @@ var getLevel = function() {
     {x: 12, y: 13,  type: 'blocked', fill: 'wall'},
     {x: 13, y: 13,  type: 'blocked', fill: 'wall'},
     {x: 14, y: 13,  type: 'blocked', fill: 'wall'},
+    {x: 15, y: 11,  type: 'blocked', fill: 'wall'},
     {x: 15, y: 13,  type: 'blocked', fill: 'wall'},
+    {x: 16, y: 11,  type: 'blocked', fill: 'wall'},
     {x: 16, y: 13,  type: 'blocked', fill: 'wall'},
+    {x: 17, y: 11,  type: 'blocked', fill: 'wall'},
+    {x: 17, y: 12,  type: 'blocked', fill: 'wall'},
     {x: 17, y: 13,  type: 'blocked', fill: 'wall'}
   ];
 

@@ -33,6 +33,12 @@ var updateHero = function() {
     hero.y += y_mod;
   }
 
+  if (32 in Game.keysDown) {
+    hero.sword = 'active'
+  } else {
+    hero.sword = 'inactive'
+  }
+
 }
 
 var validHeroMove = function(new_x, new_y) {
