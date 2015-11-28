@@ -29,25 +29,22 @@ heroImage.src = "assets/zelda-sprites-link.png";
 var renderHero = function() {
   //drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
 
-  var x_offset = {
-    'down' : 0,
-    'left' : 30,
-    'up' : 60,
-    'right' : 90
-  }[Game.hero.direction] || 0;
-  var y_offset = 0;
-
-  if (32 in Game.keysDown && Game.hero.equipped == 'sword' ) { // Spacebar
-    console.log('spacebar!!');
-    y_offset = 85;
-    x_offset -= 5;
-  }
+  var img = getHeroImage(Game.hero.direction);
 
   Game.ctx.drawImage(
     heroImage,
-    x_offset, y_offset, 20, 20,
-    Game.hero.x,
-    Game.hero.y,
-    20, 20
+    img.sx, img.sy,
+    img.sw, img.sh,
+    Game.hero.x, Game.hero.y,
+    img.w, img.h
   );
+}
+
+var getHeroImage = function(key) {
+  return {
+    'down'  : { sx:  0, sy: 0, sw: 15, sh: 20, w: 30, h: 40 },
+    'left'  : { sx: 30, sy: 0, sw: 15, sh: 20, w: 30, h: 40 },
+    'up'    : { sx: 60, sy: 0, sw: 15, sh: 20, w: 30, h: 40 },
+    'right' : { sx: 90, sy: 0, sw: 15, sh: 20, w: 30, h: 40 }
+  }[key];
 }
