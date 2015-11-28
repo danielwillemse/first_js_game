@@ -47,13 +47,13 @@ var renderHero = function() {
 
 var getHeroImage = function(key) {
   return {
-    'down'  : { sx:  0, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 0, yo: 0 },
-    'up'    : { sx: 60, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 0, yo: 0 },
-    'left'  : { sx: 30, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 0, yo: 0 },
-    'right' : { sx: 90, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 0, yo: 0 },
-    'down-sword' : { sx: 0, sy: 83, sw: 16, sh: 30, w: 24, h: 45, xo: 0, yo: 0 },
-    'up-sword' : { sx: 60, sy: 83, sw: 15, sh: 30, w: 23, h: 45, xo: 0, yo: -15 },
-    'left-sword' : { sx: 22, sy: 90, sw: 30, sh: 20, w: 45, h: 30, xo: -18, yo: 0 },
-    'right-sword' : { sx: 83, sy: 90, sw: 30, sh: 20, w: 45, h: 30, xo: 0, yo: 0 }
+    'down'  : { sx:  0, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'up'    : { sx: 60, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'left'  : { sx: 30, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'right' : { sx: 90, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'down-sword' : { sx: 0, sy: 83, sw: 16, sh: 30, w: 24, h: 45, xo: 3, yo: 3 },
+    'up-sword' : { sx: 60, sy: 83, sw: 15, sh: 30, w: 23, h: 45, xo: 3, yo: -15 },
+    'left-sword' : { sx: 22, sy: 90, sw: 30, sh: 20, w: 45, h: 30, xo: -16, yo: 3 },
+    'right-sword' : { sx: 83, sy: 90, sw: 30, sh: 20, w: 45, h: 30, xo: 3, yo: 3 }
   }[key];
 }
