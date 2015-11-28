@@ -21,10 +21,10 @@ var getHero = function() {
 
 var getWorld = function() {
   return {
-    width: 800,
-    height: 800,
-    node_width: 20,
-    node_height: 20
+    width: 900,
+    height: 900,
+    node_width: 30,
+    node_height: 30
   }
 }
 
@@ -74,8 +74,8 @@ var getLevel = function() {
 var loadCanvas = function() {
   var canvas = document.createElement("canvas");
   var ctx = canvas.getContext("2d");
-  canvas.width = 800;
-  canvas.height = 800;
+  canvas.width = 900;
+  canvas.height = 900;
   var world = document.getElementById('world');
   world.appendChild(canvas);
   return ctx;
