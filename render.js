@@ -29,9 +29,18 @@ heroImage.src = "assets/zelda-sprites-link.png";
 var renderHero = function() {
   //drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
 
+  var x = (Math.round(Game.hero.x / Game.world.node_width)) + 1;
+  var y = (Math.round(Game.hero.y / Game.world.node_height)) + 1;
+  var multi = (x * y);
+  var odd = (x * y) % 2;
+
   var key = Game.hero.direction;
   if (Game.hero.sword == 'active') {
     key += '-sword';
+  } else if (odd) {
+    key += '-odd';
+  } else {
+    key += '-even';
   }
 
   var img = getHeroImage(key);
@@ -47,10 +56,14 @@ var renderHero = function() {
 
 var getHeroImage = function(key) {
   return {
-    'down'  : { sx:  0, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
-    'up'    : { sx: 60, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
-    'left'  : { sx: 30, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
-    'right' : { sx: 90, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'down-even'  : { sx:  0, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'up-even'    : { sx: 60, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'left-even'  : { sx: 30, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'right-even' : { sx: 90, sy: 0, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'down-odd'  : { sx:  0, sy: 30, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'up-odd'    : { sx: 60, sy: 30, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'left-odd'  : { sx: 30, sy: 30, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
+    'right-odd' : { sx: 90, sy: 30, sw: 15, sh: 20, w: 23, h: 30, xo: 3, yo: 3 },
     'down-sword' : { sx: 0, sy: 83, sw: 16, sh: 30, w: 24, h: 45, xo: 3, yo: 3 },
     'up-sword' : { sx: 60, sy: 83, sw: 15, sh: 30, w: 23, h: 45, xo: 3, yo: -15 },
     'left-sword' : { sx: 22, sy: 90, sw: 30, sh: 20, w: 45, h: 30, xo: -16, yo: 3 },
